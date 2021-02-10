@@ -1,0 +1,4 @@
+Known Bugs:
+    Food doesn't spawn unless width of 800 temp fix by setting width to 800
+    snake can somehow do a 180 with neck and die, need to add a stop when key is pressed down
+    
