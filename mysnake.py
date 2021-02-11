@@ -1,6 +1,7 @@
 import pygame
 import random
 import time
+import pickle
 
 pygame.init()
 
@@ -29,9 +30,6 @@ snake_block = 10
 snake_speed = 15
 
 
-def check_high_score(current_score):
-    if current_score >= high_score:
-        current_score = high_score
 
 
     
@@ -67,21 +65,16 @@ def init_snek():
 
     while not game_over:
 
+
         while game_close == True:
             dis.fill(black)
             announcement("You Lost, Press Q-Quit or C-Play Again",red)
-            current_score(snake_length - 1)
-            super_score = max(test_score)
+
+
+
 
                 
-            for obama in test_score:
-                set_fish = current_score(snake_length-1)
-                if set_fish > super_score:
-                    test_score.append(set_fish)
             pygame.display.update()
-
-            value = score_font.render("High Score: "+str(super_score),True,yellow)
-            dis.blit(value, [500,0])
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
@@ -126,7 +119,8 @@ def init_snek():
                 game_close = True
         protagosnake(snake_block, snake_list)
         current_score(snake_length -1)
-        check_high_score(snake_length - 1)
+
+
 
         pygame.display.update()
 
